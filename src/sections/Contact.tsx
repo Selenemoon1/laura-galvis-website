@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Mail, MapPin, Phone, Send, Clock, MessageSquare, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
@@ -37,6 +37,7 @@ const Contact = () => {
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
+      email: formData.email,
       phone: formData.phone || 'No proporcionado',
       subject: formData.subject,
       message: formData.message,
@@ -46,20 +47,18 @@ const Contact = () => {
 
     try {
       // Enviar notificacion a Laura
-      const res1 = await emailjs.send(
+      await emailjs.send(
         EMAILJS.serviceId,
         EMAILJS.notificationTemplateId,
         templateParams,
       );
-      console.log('Template 1 OK:', res1);
 
       // Enviar auto-respuesta al cliente
-      const res2 = await emailjs.send(
+      await emailjs.send(
         EMAILJS.serviceId,
         EMAILJS.autoReplyTemplateId,
         templateParams,
       );
-      console.log('Template 2 OK:', res2);
 
       setIsSent(true);
       toast.success('Mensaje enviado correctamente', {
@@ -67,12 +66,9 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setIsSent(false), 8000);
-    } catch (error: unknown) {
-      const errorMsg = error instanceof Error ? error.message : typeof error === 'object' && error !== null && 'text' in error ? String((error as { text: string }).text) : String(error);
-      console.error('EmailJS Error:', error);
-      toast.error(`Error: ${errorMsg}`, {
-        description: 'Copie este mensaje y envíelo por WhatsApp para soporte.',
-        duration: 15000,
+    } catch {
+      toast.error('Error al enviar', {
+        description: 'Por favor intente nuevamente o contácteme por WhatsApp.',
       });
     } finally {
       setIsSubmitting(false);
