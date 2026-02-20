@@ -11,6 +11,16 @@ export const CONTACT = {
     city2: 'Armenia, Quindío',
     country: 'Colombia',
   },
+  social: {
+    instagram: {
+      url: 'https://www.instagram.com/abglauragalvis',
+      handle: '@abglauragalvis',
+    },
+    linkedin: {
+      url: 'https://co.linkedin.com/in/laura-marcela-galvis-castro-718abb198',
+      name: 'Laura Marcela Galvis Castro',
+    },
+  },
 } as const;
 
 export const SITE = {
@@ -22,11 +32,10 @@ export const SITE = {
   grupoLadaUrl: 'https://grupolada.com',
 } as const;
 
-// EmailJS Configuration
-// Para configurar: ve a emailjs.com, crea cuenta gratis, y reemplaza estos valores
+// EmailJS Configuration — valores en .env (ver .env.example)
 export const EMAILJS = {
-  serviceId: 'service_jc6v1iu',
-  notificationTemplateId: 'template_yez89gs',
-  autoReplyTemplateId: 'template_wawuu8g',
-  publicKey: 'foHM_NS83Jg55qPEB',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  notificationTemplateId: import.meta.env.VITE_EMAILJS_NOTIFICATION_TEMPLATE_ID,
+  autoReplyTemplateId: import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 } as const;

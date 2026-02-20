@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Send, Clock, MessageSquare, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Clock, MessageSquare, CheckCircle, Instagram, Linkedin } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -183,6 +183,28 @@ const Contact = () => {
               >
                 <Phone className="w-4 h-4" />
                 Contactar por WhatsApp
+              </a>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex items-center gap-4 mt-8">
+              <a
+                href={CONTACT.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center hover:bg-gold hover:border-gold transition-colors group"
+              >
+                <Instagram className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+              </a>
+              <a
+                href={CONTACT.social.linkedin.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center hover:bg-gold hover:border-gold transition-colors group"
+              >
+                <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
               </a>
             </div>
           </AnimatedSection>

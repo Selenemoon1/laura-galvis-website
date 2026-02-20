@@ -1,13 +1,9 @@
 import { Phone, ChevronDown } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CONTACT } from '@/constants/config';
 
 const Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  const [isLoaded] = useState(true);
 
   const handleWhatsAppClick = () => {
     window.open(CONTACT.whatsapp.url, '_blank');

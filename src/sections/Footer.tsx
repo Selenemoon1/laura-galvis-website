@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp, Instagram, Linkedin } from 'lucide-react';
 import { CONTACT } from '@/constants/config';
 
 const Footer = () => {
@@ -57,6 +57,24 @@ const Footer = () => {
                 className="w-12 h-12 bg-gold/10 flex items-center justify-center hover:bg-gold transition-colors group"
               >
                 <Mail className="w-5 h-5 text-gold group-hover:text-black transition-colors" />
+              </a>
+              <a
+                href={CONTACT.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-12 h-12 bg-gold/10 flex items-center justify-center hover:bg-gold transition-colors group"
+              >
+                <Instagram className="w-5 h-5 text-gold group-hover:text-black transition-colors" />
+              </a>
+              <a
+                href={CONTACT.social.linkedin.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-12 h-12 bg-gold/10 flex items-center justify-center hover:bg-gold transition-colors group"
+              >
+                <Linkedin className="w-5 h-5 text-gold group-hover:text-black transition-colors" />
               </a>
             </div>
           </div>
