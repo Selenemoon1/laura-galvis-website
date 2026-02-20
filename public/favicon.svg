@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#1A1A1A"/>
+  <text x="4" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="white">L</text>
+  <text x="14" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#C9A84C">|</text>
+  <text x="19" y="24" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="white">G</text>
+</svg>

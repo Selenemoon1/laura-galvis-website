@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 44 52% 54%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 44 52% 54%;
+    --radius: 0.5rem;
+    
+    /* Custom Colors */
+    --gold: 44 52% 54%;
+    --black: 0 0% 10%;
+    --white: 0 0% 100%;
+    --gray-soft: 0 0% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Libre Franklin', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: #C9A84C;
+  }
+  
+  .bg-gold {
+    background-color: #C9A84C;
+  }
+  
+  .border-gold {
+    border-color: #C9A84C;
+  }
+  
+  .text-black {
+    color: #1A1A1A;
+  }
+  
+  .bg-black {
+    background-color: #1A1A1A;
+  }
+  
+  .bg-gray-soft {
+    background-color: #F5F5F5;
+  }
+  
+  .border-gold-left {
+    border-left: 4px solid #C9A84C;
+  }
+  
+  .font-light {
+    font-weight: 300;
+  }
+  
+  .font-regular {
+    font-weight: 400;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+}
