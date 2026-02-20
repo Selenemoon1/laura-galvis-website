@@ -41,22 +41,25 @@ const Contact = () => {
       subject: formData.subject,
       message: formData.message,
       to_email: CONTACT.email,
+      reply_to: formData.email,
     };
 
     try {
       // Enviar notificacion a Laura
-      await emailjs.send(
+      const res1 = await emailjs.send(
         EMAILJS.serviceId,
         EMAILJS.notificationTemplateId,
         templateParams,
       );
+      console.log('Template 1 OK:', res1);
 
       // Enviar auto-respuesta al cliente
-      await emailjs.send(
+      const res2 = await emailjs.send(
         EMAILJS.serviceId,
         EMAILJS.autoReplyTemplateId,
         templateParams,
       );
+      console.log('Template 2 OK:', res2);
 
       setIsSent(true);
       toast.success('Mensaje enviado correctamente', {
@@ -64,10 +67,12 @@ const Contact = () => {
       });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setIsSent(false), 8000);
-    } catch (error) {
+    } catch (error: unknown) {
+      const errorMsg = error instanceof Error ? error.message : typeof error === 'object' && error !== null && 'text' in error ? String((error as { text: string }).text) : String(error);
       console.error('EmailJS Error:', error);
-      toast.error('Error al enviar', {
-        description: 'Por favor intente nuevamente o contácteme por WhatsApp.',
+      toast.error(`Error: ${errorMsg}`, {
+        description: 'Copie este mensaje y envíelo por WhatsApp para soporte.',
+        duration: 15000,
       });
     } finally {
       setIsSubmitting(false);
