@@ -74,6 +74,7 @@ const BoldPaymentButton = () => {
     if (existing) return;
 
     const script = document.createElement('script');
+    script.src = 'https://checkout.bold.co/library/boldPaymentButton.js';
     script.setAttribute('data-bold-button', 'dark-L');
     script.setAttribute('data-api-key', BOLD.identityKey);
     script.setAttribute('data-amount', BOLD.amount);
@@ -81,7 +82,6 @@ const BoldPaymentButton = () => {
     script.setAttribute('data-description', BOLD.description);
     script.setAttribute('data-order-id', `asesoria-${Date.now()}`);
     script.setAttribute('data-redirection-url', BOLD.redirectionUrl);
-    script.setAttribute('data-render-mode', 'embedded');
     containerRef.current.appendChild(script);
   }, []);
 
