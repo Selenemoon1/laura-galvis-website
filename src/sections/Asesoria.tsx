@@ -17,7 +17,7 @@ import { ASESORIA, BOLD, CONTACT } from '@/constants/config';
 const features = [
   { icon: Clock, title: 'Duración', description: ASESORIA.duracion },
   { icon: Video, title: 'Modalidad', description: ASESORIA.modalidad },
-  { icon: Scale, title: 'Áreas', description: 'Civil, comercial, familia, laboral y más' },
+  { icon: Scale, title: 'Áreas', description: 'Comercial, societario, insolvencia, reorganización y liquidaciones' },
   { icon: ShieldCheck, title: 'Confidencial', description: 'Tu información está protegida' },
 ];
 
