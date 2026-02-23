@@ -89,6 +89,7 @@ const Footer = () => {
                 { href: '#grupo-lada', label: 'Grupo LADA' },
                 { href: '#servicios', label: 'Servicios' },
                 { href: '#clientes', label: 'Clientes' },
+                { href: '#asesorias', label: 'Asesorías' },
                 { href: '#contacto', label: 'Contacto' },
               ].map((link) => (
                 <li key={link.href}>

@@ -7,6 +7,7 @@ import GrupoLada from './sections/GrupoLada';
 import Services from './sections/Services';
 import WhyChooseMe from './sections/WhyChooseMe';
 import Clients from './sections/Clients';
+import Asesoria from './sections/Asesoria';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -23,6 +24,7 @@ function App() {
         <Services />
         <WhyChooseMe />
         <Clients />
+        <Asesoria />
         <Contact />
       </main>
       <Footer />

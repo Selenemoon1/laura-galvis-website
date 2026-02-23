@@ -21,6 +21,25 @@ export const CONTACT = {
       name: 'Laura Marcela Galvis Castro',
     },
   },
+  emailJuridica: 'direccionjuridica@lauragalvisabogada.com',
+  emailContacto: 'contacto@lauragalvisabogada.com',
+} as const;
+
+export const ASESORIA = {
+  calendarUrl: 'https://calendar.app.google/sQnLGx4MLRzJGCrKA',
+  precio: 200000,
+  precioDisplay: '$200.000 COP',
+  duracion: '30 – 45 minutos',
+  modalidad: 'Virtual por Google Meet',
+} as const;
+
+// Bold Payment — llave de identidad en .env
+export const BOLD = {
+  identityKey: import.meta.env.VITE_BOLD_IDENTITY_KEY,
+  amount: '200000',
+  currency: 'COP',
+  description: 'Asesoría Legal - Laura Galvis',
+  redirectionUrl: 'https://lauragalvisabogada.com/#asesorias',
 } as const;
 
 export const SITE = {
