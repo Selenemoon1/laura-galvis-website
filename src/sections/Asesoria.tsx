@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import {
   Clock,
   Video,
@@ -10,9 +9,10 @@ import {
   CircleAlert,
   XCircle,
   AlertTriangle,
+  ExternalLink,
 } from 'lucide-react';
 import AnimatedSection from '@/components/AnimatedSection';
-import { ASESORIA, BOLD, CONTACT } from '@/constants/config';
+import { ASESORIA, CONTACT } from '@/constants/config';
 
 const features = [
   { icon: Clock, title: 'Duración', description: ASESORIA.duracion },
@@ -64,29 +64,6 @@ const cancelSteps = [
   'Selecciona cancelar o elige una nueva fecha y hora disponible',
 ];
 
-const BoldPaymentButton = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current || !BOLD.identityKey) return;
-
-    const existing = containerRef.current.querySelector('script');
-    if (existing) return;
-
-    const script = document.createElement('script');
-    script.src = 'https://checkout.bold.co/library/boldPaymentButton.js';
-    script.setAttribute('data-bold-button', 'dark-L');
-    script.setAttribute('data-api-key', BOLD.identityKey);
-    script.setAttribute('data-amount', BOLD.amount);
-    script.setAttribute('data-currency', BOLD.currency);
-    script.setAttribute('data-description', BOLD.description);
-    script.setAttribute('data-order-id', `asesoria-${Date.now()}`);
-    script.setAttribute('data-redirection-url', BOLD.redirectionUrl);
-    containerRef.current.appendChild(script);
-  }, []);
-
-  return <div ref={containerRef} className="flex justify-center" />;
-};
 
 const Asesoria = () => {
   return (
@@ -240,7 +217,16 @@ const Asesoria = () => {
                 Paga de forma segura con tarjeta de crédito, débito, PSE, Nequi, Daviplata o
                 Botón Bancolombia a través de Bold.
               </p>
-              <BoldPaymentButton />
+              <a
+                href={ASESORIA.boldPaymentUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-bold hover:bg-gold hover:text-black transition-colors"
+              >
+                <CreditCard className="w-5 h-5" />
+                Pagar {ASESORIA.precioDisplay}
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </AnimatedSection>
 

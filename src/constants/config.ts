@@ -27,19 +27,11 @@ export const CONTACT = {
 
 export const ASESORIA = {
   calendarUrl: 'https://calendar.app.google/sQnLGx4MLRzJGCrKA',
+  boldPaymentUrl: 'https://checkout.bold.co/payment/LNK_CNLH1N1JTJ',
   precio: 200000,
   precioDisplay: '$200.000 COP',
   duracion: '30 – 45 minutos',
   modalidad: 'Virtual por Google Meet',
-} as const;
-
-// Bold Payment — llave de identidad en .env
-export const BOLD = {
-  identityKey: import.meta.env.VITE_BOLD_IDENTITY_KEY,
-  amount: '200000',
-  currency: 'COP',
-  description: 'Asesoría Legal - Laura Galvis',
-  redirectionUrl: 'https://lauragalvisabogada.com/#asesorias',
 } as const;
 
 export const SITE = {
