@@ -1,54 +1,9 @@
-import { 
-  Building2, 
-  RefreshCw, 
-  Gavel, 
-  FileText, 
-  Lightbulb,
-  Shield,
-  ArrowRight
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { services } from '@/data/services';
 import AnimatedSection from '@/components/AnimatedSection';
 
 const Services = () => {
-  const services = [
-    {
-      icon: Building2,
-      title: 'Derecho Comercial y Societario',
-      description: 'Constitución de sociedades, acuerdos de socios, control corporativo, reformas estatutarias, gobierno corporativo, fusiones y adquisiciones.',
-      features: ['Constitución de sociedades', 'Acuerdos de socios', 'Gobierno corporativo', 'Fusiones y adquisiciones'],
-    },
-    {
-      icon: RefreshCw,
-      title: 'Insolvencia y Reorganización',
-      description: 'Procesos de reorganización y liquidación bajo Ley 1116 y Ley 2445 de 2025. Insolvencia de persona natural no comerciante.',
-      features: ['Ley 1116 de 2006', 'Ley 2445 de 2025', 'Reorganización empresarial', 'Liquidación de activos'],
-    },
-    {
-      icon: Gavel,
-      title: 'Litigio Civil y Comercial',
-      description: 'Procesos ejecutivos, declarativos, restituciones, servidumbres, responsabilidad contractual y extracontractual, cobro de cartera.',
-      features: ['Procesos ejecutivos', 'Responsabilidad civil', 'Cobro de cartera', 'Restituciones'],
-    },
-    {
-      icon: FileText,
-      title: 'Derecho Contractual',
-      description: 'Contratos civiles, comerciales y fiduciarios complejos. Protección patrimonial, revisión, negociación y redacción contractual.',
-      features: ['Contratos civiles', 'Contratos comerciales', 'Fideicomisos', 'Negociación contractual'],
-    },
-    {
-      icon: Lightbulb,
-      title: 'Propiedad Intelectual',
-      description: 'Registro y protección de marcas, patentes, derechos de autor y secretos empresariales. Asesoría en propiedad industrial.',
-      features: ['Registro de marcas', 'Patentes de invención', 'Derechos de autor', 'Secretos empresariales'],
-    },
-    {
-      icon: Shield,
-      title: 'Defensa de Deudores',
-      description: 'Defensa de deudores por deudas educativas, hipotecarias o bancarias. Negociación con entidades financieras.',
-      features: ['Deudas educativas', 'Deudas hipotecarias', 'Deudas bancarias', 'Negociación con bancos'],
-    },
-  ];
-
   return (
     <section id="servicios" className="relative py-24 lg:py-32 bg-gray-50 overflow-hidden">
       {/* Gold accent line */}
@@ -69,7 +24,7 @@ const Services = () => {
           </h2>
           <div className="w-20 h-1 bg-gold mx-auto mb-6" />
           <p className="text-gray-600 leading-relaxed text-lg">
-            Ofrezco soluciones jurídicas integrales adaptadas a las necesidades específicas 
+            Ofrezco soluciones jurídicas integrales adaptadas a las necesidades específicas
             de cada cliente, con un enfoque estratégico y resultados concretos.
           </p>
         </AnimatedSection>
@@ -78,12 +33,15 @@ const Services = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <AnimatedSection
-              key={index}
+              key={service.slug}
               animation="fade-up"
               delay={index * 100}
               className="group"
             >
-              <div className="h-full bg-white p-8 border-l-4 border-transparent hover:border-gold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+              <Link
+                to={`/servicios/${service.slug}`}
+                className="block h-full bg-white p-8 border-l-4 border-transparent hover:border-gold transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+              >
                 {/* Icon */}
                 <div className="w-16 h-16 bg-black flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-500">
                   <service.icon className="w-8 h-8 text-gold group-hover:text-black transition-colors duration-500" />
@@ -94,7 +52,7 @@ const Services = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                  {service.description}
+                  {service.shortDescription}
                 </p>
 
                 {/* Features */}
@@ -108,18 +66,11 @@ const Services = () => {
                 </ul>
 
                 {/* Learn more link */}
-                <a
-                  href="#contacto"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="inline-flex items-center gap-2 text-gold text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
-                >
-                  Solicitar información
+                <span className="inline-flex items-center gap-2 text-gold text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  Ver más detalles
                   <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
+                </span>
+              </Link>
             </AnimatedSection>
           ))}
         </div>

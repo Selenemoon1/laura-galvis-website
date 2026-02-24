@@ -1,13 +1,21 @@
 import { Phone, Mail, MapPin, ArrowUp, Instagram, Linkedin } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CONTACT } from '@/constants/config';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const handleSectionClick = (href: string) => {
+    if (isHome) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + href);
     }
   };
 
@@ -94,10 +102,10 @@ const Footer = () => {
               ].map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={isHome ? link.href : `/${link.href}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      scrollToSection(link.href);
+                      handleSectionClick(link.href);
                     }}
                     className="text-gray-400 hover:text-gold transition-colors inline-flex items-center gap-2 group"
                   >
@@ -106,6 +114,15 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/articulos"
+                  className="text-gray-400 hover:text-gold transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span className="w-0 group-hover:w-2 h-px bg-gold transition-all duration-300" />
+                  Artículos
+                </Link>
+              </li>
             </ul>
           </div>
 
