@@ -47,7 +47,7 @@ const About = () => {
               <div className="relative overflow-hidden bg-gray-100">
                 <img
                   src="/laura-galvis.jpg"
-                  alt="Laura Marcela Galvis Castro"
+                  alt="Laura Marcela Galvis Castro - Abogada Especialista en Derecho Comercial, Societario e Insolvencia en Colombia"
                   loading="lazy"
                   className="w-full h-auto object-cover"
                 />
