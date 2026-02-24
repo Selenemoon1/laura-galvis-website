@@ -1,4 +1,4 @@
-import { Phone, ChevronDown } from 'lucide-react';
+import { Phone, ChevronDown, CalendarCheck } from 'lucide-react';
 import { useState } from 'react';
 import { CONTACT } from '@/constants/config';
 
@@ -126,6 +126,17 @@ const Hero = () => {
               Consulta por WhatsApp
             </button>
             <a
+              href="#asesorias"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#asesorias')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group inline-flex items-center justify-center gap-3 border-2 border-gold text-gold px-8 py-5 font-bold hover:bg-gold hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-black"
+            >
+              <CalendarCheck size={22} className="group-hover:scale-110 transition-transform" />
+              Agende su asesoría
+            </a>
+            <a
               href="#servicios"
               onClick={(e) => {
                 e.preventDefault();
@@ -145,7 +156,7 @@ const Hero = () => {
           >
             {[
               { label: 'Atención nacional', icon: '●' },
-              { label: 'Presencial y virtual', icon: '●' },
+              { label: 'Asesorías 100% virtuales', icon: '●' },
               { label: '10+ años de experiencia', icon: '●' },
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-2">

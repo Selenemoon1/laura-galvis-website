@@ -102,7 +102,7 @@ const About = () => {
                   pueden comprender, sin sacrificar la solidez jurídica que cada caso exige.
                 </p>
                 <p className="text-black font-medium">
-                  Acompaño casos y audiencias en todo el país, tanto de manera presencial como virtual.
+                  Acompaño casos y audiencias en todo el país de manera virtual, brindando asesoría desde cualquier lugar de Colombia.
                 </p>
               </div>
             </AnimatedSection>

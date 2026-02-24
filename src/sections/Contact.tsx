@@ -87,6 +87,7 @@ const Contact = () => {
       icon: Mail,
       title: 'Correo electrónico',
       value: CONTACT.email,
+      secondValue: CONTACT.emailDireccion,
       href: `mailto:${CONTACT.email}`,
       action: 'Envíeme un correo',
     },
@@ -100,8 +101,8 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Atención',
-      value: 'Presencial y virtual',
-      subtitle: 'En todo el país',
+      value: 'Asesorías 100% virtuales',
+      subtitle: 'En todo Colombia',
       action: null,
     },
   ];
@@ -149,6 +150,9 @@ const Contact = () => {
                 <div className="flex-1">
                   <p className="text-sm text-gray-500 mb-1">{item.title}</p>
                   <p className="text-black font-semibold">{item.value}</p>
+                  {'secondValue' in item && item.secondValue && (
+                    <p className="text-black font-semibold">{item.secondValue}</p>
+                  )}
                   {item.subtitle && (
                     <p className="text-gray-500 text-sm">{item.subtitle}</p>
                   )}

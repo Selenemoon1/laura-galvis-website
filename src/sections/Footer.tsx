@@ -125,6 +125,7 @@ const Footer = () => {
                 <div>
                   <p className="text-gray-500 text-sm">Email</p>
                   <p className="text-white text-sm">{CONTACT.email}</p>
+                  <p className="text-white text-sm">{CONTACT.emailDireccion}</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">

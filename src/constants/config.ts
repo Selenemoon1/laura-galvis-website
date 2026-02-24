@@ -4,7 +4,8 @@ export const CONTACT = {
     display: '320 569 8922',
     url: 'https://wa.me/573205698922',
   },
-  email: 'l.galviscabogada@hotmail.com',
+  email: 'contacto@lauragalvisabogada.com',
+  emailDireccion: 'direccionjuridica@lauragalvisabogada.com',
   location: {
     cities: 'Manizales, Caldas / Armenia, Quindío',
     city1: 'Manizales, Caldas',
@@ -21,8 +22,6 @@ export const CONTACT = {
       name: 'Laura Marcela Galvis Castro',
     },
   },
-  emailJuridica: 'direccionjuridica@lauragalvisabogada.com',
-  emailContacto: 'contacto@lauragalvisabogada.com',
 } as const;
 
 export const ASESORIA = {
